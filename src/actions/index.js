@@ -1,11 +1,11 @@
-import { ADD_BOOK, DELETE_BOOK } from './type';
+import { ADD_BOOK, REMOVE_BOOK } from './type';
 
 export const addBook = book => ({
   type: ADD_BOOK,
   payload: book,
 });
 
-export const deleteBook = id => ({
-  type: DELETE_BOOK,
+export const removeBook = id => ({
+  type: REMOVE_BOOK,
   payload: id,
 });
