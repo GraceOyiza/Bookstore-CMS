@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-function Book({ }) {
+function Book({ book }) {
   const {
     id, title, author, category,
   } = book;
@@ -21,5 +21,14 @@ function Book({ }) {
     </tr>
   );
 }
+
+Book.propTypes = {
+  book: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default Book;
