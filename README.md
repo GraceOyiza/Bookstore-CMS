@@ -20,6 +20,13 @@ To get a local copy up and running follow these simple example steps.
 
 - Get a browser like Chrome and Firefox in their most recent versions
 - Code Editor (VSCode)
+### Setup
+
+- Open a terminal and run the command ```https://github.com/GraceOyiza/Bookstore-CMS```
+- cd Bookstore-CMS
+- run ```npm install```
+- run ```npm run start```
+
 
 ## Author
 
