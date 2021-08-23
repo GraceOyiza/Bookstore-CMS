@@ -25,6 +25,7 @@ function BooksList({ books }) {
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
+  deleteBook: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
