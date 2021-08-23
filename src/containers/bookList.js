@@ -1,11 +1,20 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
 import { generateRandomNumber } from '../table';
+import { removeBook } from '../actions';
 
-function BooksList({ books }) {
-  const allBooks = books.map(book => <Book book={book} key={generateRandomNumber()} />);
+function BooksList({ books, deleteBook }) {
+  const handleRemoveBook = id => deleteBook(id);
+
+  const allBooks = books.map(book => (
+    <Book
+      id={generateRandomNumber()}
+      handleRemoveBook={handleRemoveBook}
+      book={book}
+      key={generateRandomNumber()}
+    />
+  ));
   return (
     <table>
       <thead>
@@ -14,6 +23,7 @@ function BooksList({ books }) {
           <th>Title</th>
           <th>Author</th>
           <th>Category</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -35,4 +45,5 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   deleteBook: id => dispatch(removeBook(id)),
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
