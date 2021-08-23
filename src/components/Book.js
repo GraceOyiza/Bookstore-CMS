@@ -18,6 +18,9 @@ function Book({ book }) {
       <td>
         {category}
       </td>
+      <td>
+        <button onClick={() => handleRemoveBook(id)} type="button">Delete</button>
+      </td>
     </tr>
   );
 }
