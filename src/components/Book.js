@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-function Book({ book }) {
+function Book({ book, handleRemoveBook }) {
   const {
     id, title, author, category,
   } = book;
