@@ -53,10 +53,12 @@ BooksList.propTypes = {
 
 const mapStateToProps = state => ({
   books: state.books,
+  filterParam: state.filter,
 });
 
 const mapDispatchToProps = dispatch => ({
   deleteBook: id => dispatch(removeBook(id)),
+  filterBooks: category => dispatch(filterBooks(category)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
