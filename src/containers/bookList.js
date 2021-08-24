@@ -5,7 +5,6 @@ import { generateRandomNumber, filterBooksByCategory } from '../table';
 import { removeBook, filterBooks } from '../actions';
 import Filter from '../components/categoryFilter';
 
-
 const BooksList = ({
   books, deleteBook, filterBooks, filterParam,
 }) => {
@@ -42,7 +41,6 @@ const BooksList = ({
     </div>
   );
 };
-
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
