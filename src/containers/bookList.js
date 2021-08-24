@@ -43,9 +43,12 @@ const BooksList = ({
   );
 };
 
+
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
   deleteBook: PropTypes.func.isRequired,
+  filterBooks: PropTypes.func.isRequired,
+  filterParam: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
