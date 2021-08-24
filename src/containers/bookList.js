@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
-import { generateRandomNumber } from '../table';
-import { removeBook } from '../actions';
+import { generateRandomNumber, filterBooksByCategory } from '../table';
+import { removeBook, filterBooks } from '../actions';
+import Filter from '../components/categoryFilter';
+
 
 function BooksList({ books, deleteBook }) {
   const handleRemoveBook = id => deleteBook(id);
