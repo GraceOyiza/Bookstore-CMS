@@ -6,10 +6,15 @@ import { removeBook, filterBooks } from '../actions';
 import Filter from '../components/categoryFilter';
 
 
-function BooksList({ books, deleteBook }) {
+const BooksList = ({
+  books, deleteBook, filterBooks, filterParam,
+}) => {
   const handleRemoveBook = id => deleteBook(id);
+  const handleFilter = e => filterBooks(e.target.value);
 
-  const allBooks = books.map(book => (
+  const filteredBooks = filterParam === 'All' ? books : filterBooksByCategory(books, filterParam);
+
+  const allBooks = filteredBooks.map(book => (
     <Book
       id={generateRandomNumber()}
       handleRemoveBook={handleRemoveBook}
@@ -18,22 +23,25 @@ function BooksList({ books, deleteBook }) {
     />
   ));
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Category</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {allBooks}
-      </tbody>
-    </table>
+    <div>
+      <Filter handleFilter={handleFilter} />
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {allBooks}
+        </tbody>
+      </table>
+    </div>
   );
-}
+};
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
