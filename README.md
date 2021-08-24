@@ -22,7 +22,7 @@ To get a local copy up and running follow these simple example steps.
 - Code Editor (VSCode)
 ### Setup
 
-- Open a terminal and run the command ```https://github.com/GraceOyiza/Bookstore-CMS```
+- Open a terminal and run the command git clone```https://github.com/GraceOyiza/Bookstore-CMS```
 - cd Bookstore-CMS
 - run ```npm install```
 - run ```npm run start```
