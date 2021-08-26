@@ -1,4 +1,7 @@
 import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
+import { generateRandomNumber } from '../table';
+
 
 function Book({ book, handleRemoveBook }) {
   const {
