@@ -2,13 +2,12 @@ import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 import { generateRandomNumber } from '../table';
 
-
 function Book({ book, handleRemoveBook }) {
   const {
     id, title, author, category,
   } = book;
   return (
-      <div className="d-flex justify-content-between book p-4 mb-3">
+    <div className="d-flex justify-content-between book p-4 mb-3">
       <div className="d-flex justify-content-between align-items-center book-left px-5">
         <div className="book-info">
           <p className="category mb-1">{category}</p>
